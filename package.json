@@ -1,0 +1,30 @@
+{
+  "name": "codegen-apollo-suspense",
+  "version": "1.0.0",
+  "description": "Generate apollo data resolvers (with cache) for use with react suspense",
+  "main": "index.js",
+  "author": "Tyson Skiba <tyson@skiba.com.au>",
+  "license": "MIT",
+  "scripts": {
+    "release": "npx semantic-release"
+  },
+  "peerDependencies": {
+    "graphql": "^0.13.0 || ^14.0.0 || ^15.0.0"
+  },
+  "dependencies": {
+    "@graphql-codegen/visitor-plugin-common": "^2.1.2",
+    "change-case-all": "^1.0.14",
+    "object-hash": "^2.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/github": "^7.2.3",
+    "@semantic-release/release-notes-generator": "^9.0.3",
+    "husky": "^7.0.2",
+    "install-peers": "^1.0.3"
+  }
+}
