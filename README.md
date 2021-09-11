@@ -7,6 +7,10 @@ This is a plugin for [graphl codegen](https://www.graphql-code-generator.com/), 
 This creates a data repository for each query and mutation in your application (subscriptions are not supported yet).  
 By using these repositories you can use suspense with apollo or migrate your app to use suspense.
 
+## Install
+
+`yarn add -D codegen-apollo-suspense`
+
 ## Setup
 
 Follow the [official setup guide](https://www.graphql-code-generator.com/docs/getting-started/installation) if your are not already using codegen.
@@ -20,7 +24,7 @@ generates:
   src/generated/schema.tsx:
     - "typescript"
     - "typescript-operations"
-    - typescript-react-apollo
+-   - typescript-react-apollo
 +   - codegen-apollo-suspense
 ```
 
@@ -114,4 +118,22 @@ const Widget: React.FC = () => (
         </Suspense>
     </ErrorBoundary>
 )
+```
+
+## Using with the React Apollo plugin
+
+To ensure that duplicate documents are not created please add
+
+```diff
+schema: https://graphql-weather-api.herokuapp.com
+overwrite: true
+documents: src/**/*.graphql
+generates:
+  src/generated/schema.tsx:
+    - "typescript"
+    - "typescript-operations"
++   - typescript-react-apollo
+   - codegen-apollo-suspense
++ config:
++  useExternalDocument: true
 ```

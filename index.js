@@ -28,7 +28,7 @@ export function createRepository<TReturn, TArgs extends unknown[] = []>(
 class Visitor extends ClientSideBaseVisitor {
     constructor(schema, fragments, config, documents) {
         super(schema, fragments, config, {
-            documentMode: DocumentMode.graphQLTag,
+            documentMode: config.useExternalDocument ? DocumentMode.external : DocumentMode.graphQLTag,
         }, documents);
 
         this._documents = documents;
